@@ -1,0 +1,46 @@
+@startuml
+class BaseData{
+    id int
+    name String
+}
+
+class Category {
+    user_id int Foreignkey
+    tasks Vector<Task>
+    +sort()
+}
+
+class User{
+    eMain String
+    password String
+    categorys Vector<Category>
+
+    +login()
+    +logout()
+    +addTask()
+    +addCategory()
+    +editTask()
+    +deleteTask()
+    +deleteCategory()
+    +passwordReset()
+}
+
+class Task{
+    categoryId int
+    complete bool
+    memo String
+    user_id int Foreignkey
+
+    +notice()
+    +complete()
+    +revive()
+}
+
+BaseData<|---- Category
+BaseData<|-- User
+BaseData<|---- Task
+
+User "1" -- "1..*" Category
+Category "1" -- "0..*" Task
+
+@enduml
