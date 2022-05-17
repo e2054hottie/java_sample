@@ -15,23 +15,23 @@ class Task{
     +notice()
     +complete()
     +revive()
+    +create()
 }
 
 class Category {
-    id userId
+    int userId
 
     +addTask()
+    +create()
     +sort()
 }
 
 class User{
-    String eMain
+    String eMail
     String password
 
     +login()
     +logout()
-    +addCategory()
-    +editTask()
     +deleteTask()
     +deleteCategory()
     +passwordReset()
