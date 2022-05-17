@@ -2,9 +2,8 @@
 class BaseData{
     int id
     String name
-
-    +createdAt()
-    +updatedAt()
+    TimeStamp createdAt
+    TimeStamp updatedAt
 }
 
 class Task{
@@ -16,6 +15,7 @@ class Task{
     +complete()
     +revive()
     +create()
+    +delete()
 }
 
 class Category {
@@ -23,6 +23,7 @@ class Category {
 
     +addTask()
     +create()
+    +delete()
     +sort()
 }
 
@@ -32,8 +33,6 @@ class User{
 
     +login()
     +logout()
-    +deleteTask()
-    +deleteCategory()
     +passwordReset()
 }
 
