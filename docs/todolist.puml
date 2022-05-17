@@ -1,0 +1,48 @@
+@startuml
+class BaseData{
+    int id
+    String name
+    TimeStamp createdAt
+    TimeStamp updatedAt
+}
+
+class Task{
+    boolean complete
+    String memo
+    int categoryId
+
+    +notice()
+    +complete()
+    +revive()
+    +create()
+    +delete()
+}
+
+class Category {
+    int userId
+
+    +addTask()
+    +create()
+    +delete()
+    +sort()
+}
+
+class User{
+    String eMail
+    String password
+
+    +login()
+    +logout()
+    +passwordReset()
+}
+
+
+
+BaseData<|---- Category
+BaseData<|-- User
+BaseData<|---- Task
+
+User "1" -- "1..*" Category
+Category "1" -- "0..*" Task
+
+@enduml
