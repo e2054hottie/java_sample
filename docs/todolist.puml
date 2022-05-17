@@ -1,23 +1,35 @@
 @startuml
 class BaseData{
-    id int
-    name String
+    int id
+    String name
+
+    +createdAt()
+    +updatedAt()
+}
+
+class Task{
+    int categoryId
+    boolean complete
+    String memo
+
+    +notice()
+    +complete()
+    +revive()
 }
 
 class Category {
-    user_id int Foreignkey
-    tasks Vector<Task>
+    id userId
+
+    +addTask()
     +sort()
 }
 
 class User{
-    eMain String
-    password String
-    categorys Vector<Category>
+    String eMain 
+    String password
 
     +login()
     +logout()
-    +addTask()
     +addCategory()
     +editTask()
     +deleteTask()
@@ -25,16 +37,7 @@ class User{
     +passwordReset()
 }
 
-class Task{
-    categoryId int
-    complete bool
-    memo String
-    user_id int Foreignkey
 
-    +notice()
-    +complete()
-    +revive()
-}
 
 BaseData<|---- Category
 BaseData<|-- User
