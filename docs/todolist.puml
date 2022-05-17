@@ -8,9 +8,9 @@ class BaseData{
 }
 
 class Task{
-    int categoryId
     boolean complete
     String memo
+    int categoryId
 
     +notice()
     +complete()
@@ -25,7 +25,7 @@ class Category {
 }
 
 class User{
-    String eMain 
+    String eMain
     String password
 
     +login()
