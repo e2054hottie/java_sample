@@ -14,6 +14,6 @@ import java.io.IOException;
 @WebServlet("/user/createtask")
 public class CreateTask extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        
     }
 }
