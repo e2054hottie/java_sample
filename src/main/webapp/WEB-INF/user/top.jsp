@@ -9,5 +9,6 @@
 <span class="label label-danger">${Error}</span>
 <h2>${currentUser.name}</h2>
 <h3><a href="/user/logout">ログアウト</a></h3>
+<h3><a href="/user/createtask">タスク登録 </a></h3>
 </body>
 </html>
