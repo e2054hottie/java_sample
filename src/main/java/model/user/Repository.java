@@ -9,7 +9,7 @@ public class Repository extends Client {
 
         try {
             //sql文を用意
-            String sql = "insert into user(name, email, password, created_at, updated_at) values (?, ?, ?, ?, ?)";
+            String sql = "insert into users(name, email, password, created_at, updated_at) values (?, ?, ?, ?, ?)";
             //DBとの接続
             connection = create();
             // 作成日時と更新日時のために現在時刻を取得
@@ -36,7 +36,7 @@ public class Repository extends Client {
         ResultSet rs = null;
         try {
             // sql文を用意
-            String sql = "select * from user where email = ?";
+            String sql = "select * from users where email = ?";
             // DBとの接続
             connection = create();
             //
