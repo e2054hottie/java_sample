@@ -27,10 +27,6 @@ public class Insert extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("currentUser");
 
-        if(user == null) {
-            System.out.println("user is null");
-        }
-
         Category category = new Category(
                 null,
                 name,
