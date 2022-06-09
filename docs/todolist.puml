@@ -9,7 +9,7 @@ class BaseData{
 class Task{
     boolean complete
     String memo
-    int categoryId
+    int taskId
 
     +notice()
     +complete()
