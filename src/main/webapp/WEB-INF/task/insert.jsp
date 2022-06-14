@@ -20,6 +20,7 @@
             <input type="text" class="form-control" name="description" id="description"><br>
             <label for="title">期限日</label><br>
             <input type="date" class="form-control" name="limit" id="limit"><br>
+<<<<<<< HEAD
 
             <label for="title">曜日</label><br>
             <select name="frequency">
@@ -33,6 +34,7 @@
                 <option value=7>なし</option>
             </select><br>
             <label for="title">カテゴリー</label><br>
+
             <select name="categoryId">
                 <c:forEach var="category" items="${categories}">
                     <option value="${category.getId()}"><c:out value="${category.getName()}" /></option>
