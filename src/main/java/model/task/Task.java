@@ -90,5 +90,4 @@ public class Task extends Default {
         this.frequency = frequency;
     }
 
-
 }

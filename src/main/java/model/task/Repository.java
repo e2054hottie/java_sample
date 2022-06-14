@@ -12,7 +12,7 @@ public class Repository extends Client {
         PreparedStatement stmt = null;
 
         try {
-            String sql = "insert into tasks (name, dead_line,frequency,compleated,memo, created_at, updated_at, categoryId) values (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert into tasks (name, dead_line,frequency,completed,memo, created_at, updated_at, category_id) values (?, ?, ?, ?, ?, ?, ?, ?)";
 
             connection = create();
 
@@ -27,7 +27,6 @@ public class Repository extends Client {
             stmt.setTimestamp(6,currentTime);
             stmt.setTimestamp(7,currentTime);
             stmt.setInt(8, task.getCategoryId());
-
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
