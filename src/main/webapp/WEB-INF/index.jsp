@@ -16,6 +16,5 @@
     <button type="submit">送信</button>
 </form><br>
 <h2>新規登録は<a href="/user/signup">こちら</a>から。</h2>
-<%--<h2>新規登録は<a href="/task/insertComp">こちら</a>から。</h2>--%>
 </body>
 </html>

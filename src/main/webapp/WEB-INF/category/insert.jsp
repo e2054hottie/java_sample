@@ -17,6 +17,12 @@
     <div class="form-group">
         <label>カテゴリ名</label>
         <input type="text" class="form-control"  data-cke-saved-name="name" name="name"><br>
+        <%--<label for="title">氏名</label>
+        <input type="text" class="form-control"  data-cke-saved-name="name" name="name"><br>
+        <label for="title">メールアドレス</label>
+        <input type="email" class="form-control"  data-cke-saved-name="email" name="email" id="title"><br>
+        <label for="title">パスワード</label>
+        <input type="text" class="form-control"  data-cke-saved-name="pass" name="pass">--%>
     </div>
     <button type="submit">登録</button>
 </form>
