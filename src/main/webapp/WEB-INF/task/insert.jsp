@@ -8,7 +8,6 @@
 <div class = "header">
     <header>
         <h2>タスク新規登録画面</h2>
-<%--        <%@ include file="../common/header.jsp"%>--%>
     </header>
 </div>
 <div class="main">
@@ -21,6 +20,7 @@
             <input type="text" class="form-control" name="description" id="description"><br>
             <label for="title">期限日</label><br>
             <input type="date" class="form-control" name="limit" id="limit"><br>
+
             <label for="title">曜日</label><br>
             <select name="frequency">
                 <option value=0>日曜日</option>
