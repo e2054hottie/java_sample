@@ -12,7 +12,7 @@ public class Repository extends Client {
         PreparedStatement stmt = null;
 
         try {
-            String sql = "insert into tasks (name, dead_line,frequency,completed,memo, created_at, updated_at, category_id) values (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert into tasks (name, dead_line,frequency,completed,memo, created_at, updated_at, category_id,user_id) values (?, ?, ?, ?, ?, ?, ?, ?,?)";
 
             connection = create();
 
@@ -27,6 +27,7 @@ public class Repository extends Client {
             stmt.setTimestamp(6,currentTime);
             stmt.setTimestamp(7,currentTime);
             stmt.setInt(8, task.getCategoryId());
+            stmt.setInt(9,task.getUserId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -41,7 +42,7 @@ public class Repository extends Client {
         ResultSet rs = null;
 
         try {
-            String sql = "select * from tasks where user_id = ?";
+            String sql = "select * from tasks where user_id = ? order by category_id asc";
 
             connection = create();
             stmt = connection.prepareStatement(sql);
@@ -53,11 +54,11 @@ public class Repository extends Client {
                 Task task = new Task(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getTimestamp("limit"),
+                        rs.getTimestamp("dead_line"),
                         rs.getInt("frequency"),
-                        rs.getString("description"),
-                        null,
-                        null,
+                        rs.getString("memo"),
+                        rs.getInt("user_id"),
+                        rs.getInt("category_id"),
                         null,
                         null
                 );
