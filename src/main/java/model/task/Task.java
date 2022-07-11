@@ -34,6 +34,19 @@ public class Task extends Default {
         return Repository.indexTasks(user);
     }
 
+    public void update(){
+        Repository.update(this);
+    }
+
+    public Task search(){
+        Task task = Repository.search(this);
+        return task;
+    }
+
+    public void delete(){
+        Repository.delete(this);
+    }
+
     public String getName() {
         return name;
     }
@@ -67,6 +80,10 @@ public class Task extends Default {
     }
 
     public boolean isCompleated() {
+        return compleated;
+    }
+
+    public boolean getCompleated() {
         return compleated;
     }
 
