@@ -10,7 +10,7 @@ public class Task extends Default {
     private String name;
     private Timestamp deadline;//締め切り
     private Integer frequency; //頻度
-    private boolean compleated; //タスクの完了
+    private Boolean compleated; //タスクの完了
     private String memo;
     private Integer userId;
     private Integer categoryId;
@@ -18,6 +18,17 @@ public class Task extends Default {
     public Task(Integer id, String name, Timestamp deadline, Integer frequency, String memo, Integer userId, Integer categoryId, Timestamp createdAt, Timestamp updatedAt){
         super(id, createdAt, updatedAt);
         this.compleated = false;
+        this.name = name;
+        this.deadline = deadline;
+        this.frequency = frequency;
+        this.memo = memo;
+        this.userId = userId;
+        this.categoryId = categoryId;
+    }
+
+    public Task(Integer id, String name, Timestamp deadline, Integer frequency,Boolean comp, String memo, Integer userId, Integer categoryId, Timestamp createdAt, Timestamp updatedAt){
+        super(id, createdAt, updatedAt);
+        this.compleated = comp;
         this.name = name;
         this.deadline = deadline;
         this.frequency = frequency;

@@ -37,6 +37,6 @@ public class Insert extends HttpServlet {
 
         category.insert();
 
-        resp.sendRedirect("/");
+        resp.sendRedirect("/task/read");
     }
 }
