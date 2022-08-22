@@ -56,6 +56,7 @@ public class Repository extends Client {
                         rs.getString("name"),
                         rs.getTimestamp("dead_line"),
                         rs.getInt("frequency"),
+                        rs.getBoolean("completed"),
                         rs.getString("memo"),
                         rs.getInt("user_id"),
                         rs.getInt("category_id"),
@@ -89,10 +90,9 @@ public class Repository extends Client {
             stmt.setString(1, task.getName());
             stmt.setString(2, task.getMemo());
             stmt.setTimestamp(3, task.getDeadline());
-            stmt.setBoolean(4, task.getCompleated());
+            stmt.setInt(4, task.getCompleated()?1:0);
             stmt.setTimestamp(5, currentTime);
             stmt.setInt(6, task.getCategoryId());
-            System.out.println(task.getCategoryId());
             stmt.setInt(7,task.getId());
 
             stmt.executeUpdate();
@@ -123,12 +123,14 @@ public class Repository extends Client {
                         rs.getString("name"),
                         rs.getTimestamp("dead_line"),
                         rs.getInt("frequency"),
+                        rs.getBoolean("completed"),
                         rs.getString("memo"),
                         rs.getInt("user_id"),
                         rs.getInt("category_id"),
                         null,
                         null
                 );
+                System.out.println("comp b"+rs.getBoolean("completed"));
             }
             return task;
         } catch (SQLException e) {

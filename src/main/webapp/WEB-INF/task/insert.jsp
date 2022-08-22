@@ -22,15 +22,9 @@
             <input type="date" class="form-control" name="limit" id="limit"><br>
             <label for="title">頻度</label><br>
             <select name="frequency">
-                <option value="0">日曜日</option>
-                <option value="1">月曜日</option>
-                <option value="2">火曜日</option>
-                <option value="3">水曜日</option>
-                <option value="4">木曜日</option>
-                <option value="5">金曜日</option>
-                <option value="6">土曜日</option>
-                <option value="7">なし</option>
-            </select>
+                <option value="0">なし</option>
+                <option value="1">毎週</option>
+            </select><br>
             <label for="title">カテゴリー選択</label><br>
             <select name="categoryId">
                 <c:forEach var="category" items="${categories}">

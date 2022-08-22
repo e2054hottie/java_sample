@@ -23,6 +23,12 @@
             <input type="text" class="form-control" name="memo" id="description" value="${currenttask.memo}"><br>
             <label for="title">期限日</label><br>
             <input type="date" class="form-control" name="dead_line" id="limit" value="${SimpleDateFormat("yyyy-MM-dd").format(currenttask.deadline.getTime())}"><br>
+            <label for="title">達成状況</label><br>
+            <input type="radio"  name="compleated" id="compleated" <c:if test="${currenttask.compleated}"> checked</c:if>  value="1" >  完了
+            <input type="radio"  name="compleated" id="compleated" <c:if test="${not currenttask.compleated}"> checked</c:if> value="0" > 未完了<br>
+
+        <%--            <input type="radio" class="form-control" name="completed" id="compleated" value="0"> 未完了<br>--%>
+
             <label for="title">カテゴリー</label><br>
             <select name="categoryId" value="${currenttask.categoryId}">
                 <c:forEach var="category" items="${categories}">

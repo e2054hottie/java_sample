@@ -61,6 +61,8 @@ public class Update extends HttpServlet {
         String name = req.getParameter("name");
         String description = req.getParameter("memo");
         Timestamp limit = new Timestamp(Date.valueOf(req.getParameter("dead_line")).getTime());
+        Boolean comp = (Integer.parseInt(req.getParameter("compleated")) == 0 ? false:true );
+        System.out.println("compleated="+comp);
         Integer categoryId = Integer.parseInt(req.getParameter("categoryId"));
         Integer id = Integer.parseInt(req.getParameter("taskid"));
         User user = (User) req.getSession().getAttribute("currentUser");
@@ -71,6 +73,7 @@ public class Update extends HttpServlet {
                 name,
                 limit,
                 0,
+                comp,
                 description,
                 userId,
                 categoryId,
